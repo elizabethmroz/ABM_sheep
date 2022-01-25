@@ -9,8 +9,8 @@ import random
 import math
 
 # xy starting variables
-y0 = random.randint(0, 100) 
-x0 = random.randint(0,100)
+y0 = random.randint(0, 99) 
+x0 = random.randint(0,99)
 
 # print variables
 print("starting position of agents is", y0, ",", x0)
