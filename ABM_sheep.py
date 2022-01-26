@@ -8,6 +8,7 @@ Created on Tue Jan 25 12:39:06 2022
 import random 
 import math
 import operator 
+import matplotlib.pyplot as mp
 
 # list created for coordinates
 agents = []
@@ -167,3 +168,8 @@ print("agents 0 and 1 are", euclid, "units (euclidean distance) away from each o
 print("The coordinates of the agent located furthest east are", max(agents))
 print("The coordinates of the agent located furthest north are", max(agents, key=operator.itemgetter(1)))
 
+mp.ylim(0,99)
+mp.xlim(0,99)
+mp.scatter(agents[0][1],agents[0][0], color='red')
+mp.scatter(agents[1][1],agents[1][0], color='blue')
+mp.show()
