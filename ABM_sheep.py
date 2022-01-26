@@ -13,8 +13,8 @@ y0 = random.randint(0, 99)
 x0 = random.randint(0,99)
 
 # xy starting variables
-y1 = random.randint(0,100) 
-x1 = random.randint(0,100)
+y1 = random.randint(0,99) 
+x1 = random.randint(0,99)
 
 # print variables
 print("starting position of agent 0 is", y0, ",", x0)
@@ -163,4 +163,4 @@ print("agent 1 is", y1, ",", x1)
 # pythag = a^2+b^2 = c^2
 
 euclid = ((math.pow((x0 - x1),2)) + (math.pow((y0-y1),2)))**0.5            
-print(euclid)
+print("agents 0 and 1 are", euclid, "units (euclidean distance) away from each other")
