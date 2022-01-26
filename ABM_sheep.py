@@ -10,8 +10,18 @@ import math
 import operator 
 import matplotlib.pyplot as plt
 
+# number of agents
+num_of_agents = 10
+
 # list created for coordinates
 agents = []
+
+for i in range(num_of_agents):
+    agents.append([random.randint(0,99),random.randint(0,99)])
+    
+
+
+
 
 #c coordinates for agents generated, assigned to list
 agents.append([random.randint(0, 99),random.randint(0, 99)])
