@@ -12,8 +12,13 @@ import math
 y0 = random.randint(0, 99) 
 x0 = random.randint(0,99)
 
+# xy starting variables
+y1 = random.randint(0,100) 
+x1 = random.randint(0,100)
+
 # print variables
-print("starting position of agents is", y0, ",", x0)
+print("starting position of agent 0 is", y0, ",", x0)
+print("starting position of agent 1 is", y1, ",", x1)
 
 # TIMESTEP 1
 # alter y randomly by +-1 (sheep walk one step)
@@ -80,13 +85,8 @@ if random.random() <0.5:
 else: 
     x0 = x0 - 1
     
-# check
-print("agent 0 is", y0, ",", x0)
 
 
-# xy starting variables
-y1 = random.randint(0,100) 
-x1 = random.randint(0,100)
 
 #TIMESTEP 1
 # alter y randomly by +-1 (sheep walk one step)
@@ -155,6 +155,7 @@ else:
 
 # CHECK
 print("after 5 timesteps")
+print("agent 0 is", y0, ",", x0)
 print("agent 1 is", y1, ",", x1)
 
 
