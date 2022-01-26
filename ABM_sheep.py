@@ -43,7 +43,6 @@ for x in range(timestep):
             agents[i][1] = agents[i][1] + 1
         else: 
             agents[i][1] = agents[i][1] - 1
-    print(agents)
             
 
 '''
@@ -53,146 +52,8 @@ bounding the environment:
 '''
 
 
-# print variables
-print("starting position of agent 0 is", agents[0][0], ",", agents[0][1])
-print("starting position of agent 1 is", agents[1][0], ",", agents[1][1])
 
-# AGENT 0
-# TIMESTEP 1
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[0][0] = agents[0][0] + 1
-else: 
-    agents[0][0] = agents[0][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[0][1] = agents[0][1] + 1
-else: 
-    agents[0][1] = agents[0][1] - 1
-    
-#TIMESTEP 2
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[0][0] = agents[0][0] + 1
-else: 
-    agents[0][0] = agents[0][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[0][1] = agents[0][1] + 1
-else: 
-    agents[0][1] = agents[0][1] - 1
-    
-#TIMESTEP 3
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[0][0] = agents[0][0] + 1
-else: 
-    agents[0][0] = agents[0][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[0][1] = agents[0][1] + 1
-else: 
-    agents[0][1] = agents[0][1] - 1
-    
-#TIMESTEP 4
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[0][0] = agents[0][0] + 1
-else: 
-    agents[0][0] = agents[0][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[0][1] = agents[0][1] + 1
-else: 
-    agents[0][1] = agents[0][1] - 1
-    
-#TIMESTEP 5
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[0][0] = agents[0][0] + 1
-else: 
-    agents[0][0] = agents[0][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[0][1] = agents[0][1] + 1
-else: 
-    agents[0][1] = agents[0][1] - 1
-    
-# AGENT 1
-#TIMESTEP 1
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[1][0] = agents[1][0] + 1
-else: 
-    agents[1][0] = agents[1][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[1][1] = agents[1][1] + 1
-else: 
-    agents[1][1] = agents[1][1] - 1
-    
-#TIMESTEP 2
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[1][0] = agents[1][0] + 1
-else: 
-    agents[1][0] = agents[1][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[1][1] = agents[1][1] + 1
-else: 
-    agents[1][1] = agents[1][1] - 1
-    
-#TIMESTEP 3
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[1][0] = agents[1][0] + 1
-else: 
-    agents[1][0] = agents[1][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[1][1] = agents[1][1] + 1
-else: 
-    agents[1][1] = agents[1][1] - 1
-    
-#TIMESTEP 4
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[1][0] = agents[1][0] + 1
-else: 
-    agents[1][0] = agents[1][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[1][1] = agents[1][1] + 1
-else: 
-    agents[1][1] = agents[1][1] - 1
-
-#TIMESTEP 5
-# alter y randomly by +-1 (sheep walk one step)
-if random.random() <0.5:
-    agents[1][0] = agents[1][0] + 1
-else: 
-    agents[1][0] = agents[1][0] - 1
-    
-# alter x randomly by +-1
-if random.random() <0.5:
-    agents[1][1] = agents[1][1] + 1
-else: 
-    agents[1][1] = agents[1][1] - 1
-
-# CHECK
-print("after 5 timesteps")
-print("agent 0 is", agents[0][0], ",", agents[0][1])
-print("agent 1 is", agents[1][0], ",", agents[1][1])
+''' COMMENTED OUT FOR NOW 
 
 
 # distance between agents 0 and 1
@@ -204,10 +65,22 @@ print("agents 0 and 1 are", euclid, "units (euclidean distance) away from each o
 print("The coordinates of the agent located furthest east are", max(agents))
 print("The coordinates of the agent located furthest north are", max(agents, key=operator.itemgetter(1)))
 
-plt.ylim(0,99)
-plt.xlim(0,99)
-plt.scatter(agents[0][1],agents[0][0], color='black')
-plt.scatter(agents[1][1],agents[1][0], color='black')
-m = max(agents, key=operator.itemgetter(1))
-plt.scatter(m[1],m[0], color='red')
+
+''' 
+
+plt.ylim(-29,129)
+plt.xlim(-29,129)
+
+for i in range(num_of_agents):
+    plt.scatter(agents[i][0],agents[i][1], color='black')
+
+# most eastern point
+m_east = max(agents, key=operator.itemgetter(0))
+plt.scatter(m_east[0],m_east[1], color='blue')
+
+# most northern point
+m_north = max(agents, key=operator.itemgetter(1))
+plt.scatter(m_north[0],m_north[1], color='red')
 plt.show()
+
+    
