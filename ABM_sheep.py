@@ -7,21 +7,20 @@ Created on Tue Jan 25 12:39:06 2022
 # imported libraries
 import random 
 import math
+import operator 
 
 # list created for coordinates
 agents = []
-
 
 #c coordinates for agents generated, assigned to list
 agents.append([random.randint(0, 99),random.randint(0, 99)])
 agents.append([random.randint(0, 99),random.randint(0, 99)])
 
-print(agents)
-
 # print variables
 print("starting position of agent 0 is", agents[0][0], ",", agents[0][1])
 print("starting position of agent 1 is", agents[1][0], ",", agents[1][1])
 
+# AGENT 0
 # TIMESTEP 1
 # alter y randomly by +-1 (sheep walk one step)
 if random.random() <0.5:
@@ -87,9 +86,7 @@ if random.random() <0.5:
 else: 
     agents[0][1] = agents[0][1] - 1
     
-
-
-
+# AGENT 1
 #TIMESTEP 1
 # alter y randomly by +-1 (sheep walk one step)
 if random.random() <0.5:
@@ -163,6 +160,10 @@ print("agent 1 is", agents[1][0], ",", agents[1][1])
 
 # distance between agents 0 and 1
 # pythag = a^2+b^2 = c^2
-
 euclid = ((math.pow((agents[0][1] - agents[1][1]),2)) + (math.pow((agents[0][0]-agents[1][0]),2)))**0.5            
 print("agents 0 and 1 are", euclid, "units (euclidean distance) away from each other")
+
+# which agent is furthest east?
+print("The coordinates of the agent located furthest east are", max(agents))
+print("The coordinates of the agent located furthest north are", max(agents, key=operator.itemgetter(1)))
+
