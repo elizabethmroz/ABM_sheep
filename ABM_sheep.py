@@ -170,6 +170,8 @@ print("The coordinates of the agent located furthest north are", max(agents, key
 
 plt.ylim(0,99)
 plt.xlim(0,99)
-plt.scatter(agents[0][1],agents[0][0], color='red')
-plt.scatter(agents[1][1],agents[1][0], color='blue')
+plt.scatter(agents[0][1],agents[0][0], color='black')
+plt.scatter(agents[1][1],agents[1][0], color='black')
+m = max(agents, key=operator.itemgetter(1))
+plt.scatter(m[1],m[0], color='red')
 plt.show()
