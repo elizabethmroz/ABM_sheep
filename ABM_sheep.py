@@ -16,16 +16,42 @@ num_of_agents = 10
 # list created for coordinates
 agents = []
 
+# for-loop creating agents
 for i in range(num_of_agents):
     agents.append([random.randint(0,99),random.randint(0,99)])
     
 
+# check
+print(agents)
+    
 
+# timesteps
+timestep = 5
 
+# for-loop to change y-variable by timestep
+for x in range(timestep):
+    for i in range(num_of_agents):
+        if random.random() < 0.5:
+            agents[i][0] = agents[i][0] + 1
+        else: 
+            agents[i][0] = agents[i][0] - 1
 
-#c coordinates for agents generated, assigned to list
-agents.append([random.randint(0, 99),random.randint(0, 99)])
-agents.append([random.randint(0, 99),random.randint(0, 99)])
+# for-loop to change x-variable by timestep
+for x in range(timestep):
+    for i in range(num_of_agents):
+        if random.random() < 0.5:
+            agents[i][1] = agents[i][1] + 1
+        else: 
+            agents[i][1] = agents[i][1] - 1
+    print(agents)
+            
+
+'''
+bounding the environment: 
+    if the grid is constrained to 0 - 99, it is currently possible 
+    for agents to be able to go ito the negative values or beyond the 99
+'''
+
 
 # print variables
 print("starting position of agent 0 is", agents[0][0], ",", agents[0][1])
