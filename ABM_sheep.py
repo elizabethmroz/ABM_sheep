@@ -52,6 +52,7 @@ timestep = 3
     
 # for-loop to change x- and y-variable by timestep (Torus boundary solution)
 for x in range(timestep):
+      
     for i in range(num_of_agents):
         if random.random() < 0.5:
             agents[i][1] = (agents[i][1] + 1) % 100
@@ -63,17 +64,10 @@ for x in range(timestep):
             agents[i][0] = (agents[i][0] + 1) % 100
         else: 
             agents[i][0] = (agents[i][0] - 1) % 100
+            
     print(agents)
-
-# check
-print(agents)
-
-
-'''
-bounding the environment: 
-    if the grid is constrained to 0 - 99, it is currently possible 
-    for agents to be able to go ito the negative values or beyond the 99
-'''
+    
+''' would be nice if i could get this to output a separate plot for each movement of agent '''
 
 
 
