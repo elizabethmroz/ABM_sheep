@@ -49,10 +49,15 @@ print(agents)
 # timesteps
 timestep = 3
 
-''' Could these two movements be combined together into one? '''
-
-# for-loop to change y-variable by timestep (Torus boundary solution)
+    
+# for-loop to change x- and y-variable by timestep (Torus boundary solution)
 for x in range(timestep):
+    for i in range(num_of_agents):
+        if random.random() < 0.5:
+            agents[i][1] = (agents[i][1] + 1) % 100
+        else: 
+            agents[i][1] = (agents[i][1] - 1) % 100
+            
     for i in range(num_of_agents):
         if random.random() < 0.5:
             agents[i][0] = (agents[i][0] + 1) % 100
@@ -60,16 +65,6 @@ for x in range(timestep):
             agents[i][0] = (agents[i][0] - 1) % 100
     print(agents)
 
-# for-loop to change x-variable by timestep (Torus boundary solution)
-for x in range(timestep):
-    for i in range(num_of_agents):
-        if random.random() < 0.5:
-            agents[i][1] = (agents[i][1] + 1) % 100
-        else: 
-            agents[i][1] = (agents[i][1] - 1) % 100
-    print(agents)
-    
-            
 # check
 print(agents)
 
