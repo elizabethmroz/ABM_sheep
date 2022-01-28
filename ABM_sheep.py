@@ -4,6 +4,27 @@ Created on Tue Jan 25 12:39:06 2022
 
 @author: gy16e3m
 """
+
+'''
+QUESTION FOR DEMONSTRATOR:
+    
+# DOES THE MODULUS OPERATOR HAVE TO BE +1 MORE THAN THE BOUNDARY ALWAYS?
+
+# because here, the 100 becomes 0
+test_agent = (100, 50)
+test_agent_update = ((test_agent[0] + 1) % 101)
+print(test_agent)
+print(test_agent_update)
+
+
+# whereas here, the 100 becomes 1 because 100/100 is 1
+test_agent = (100, 50)
+test_agent_update = ((test_agent[0] + 1) % 100)
+print(test_agent)
+print(test_agent_update)
+
+'''
+
 # imported libraries
 import random 
 import math
@@ -26,7 +47,9 @@ print(agents)
     
 
 # timesteps
-timestep = 100
+timestep = 3
+
+''' Could these two movements be combined together into one? '''
 
 # for-loop to change y-variable by timestep (Torus boundary solution)
 for x in range(timestep):
@@ -35,6 +58,7 @@ for x in range(timestep):
             agents[i][0] = (agents[i][0] + 1) % 100
         else: 
             agents[i][0] = (agents[i][0] - 1) % 100
+    print(agents)
 
 # for-loop to change x-variable by timestep (Torus boundary solution)
 for x in range(timestep):
@@ -43,6 +67,8 @@ for x in range(timestep):
             agents[i][1] = (agents[i][1] + 1) % 100
         else: 
             agents[i][1] = (agents[i][1] - 1) % 100
+    print(agents)
+    
             
 # check
 print(agents)
@@ -85,5 +111,8 @@ plt.scatter(m_east[0],m_east[1], color='blue')
 m_north = max(agents, key=operator.itemgetter(1))
 plt.scatter(m_north[0],m_north[1], color='red')
 plt.show()
+
+
+
 
     
