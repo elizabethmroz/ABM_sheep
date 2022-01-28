@@ -47,7 +47,7 @@ print(agents)
     
 
 # timesteps
-timestep = 3
+timestep = 10
 
     
 # for-loop to change x- and y-variable by timestep (Torus boundary solution)
@@ -70,9 +70,46 @@ for x in range(timestep):
     
     
     
+'''
+# TESTING SOLID WALL SOLUTION
+
+
+agents_solid_y = ([99], [0])
+
+for x in range(timestep):
+    if random.random() <0.5:
+        agents_solid_y[0][0] = (agents_solid_y[0][0] +1)
+    else: 
+        agents_solid_y[0][0] = (agents_solid_y[0][0] -1)
+        
+    if random.random() <0.5:
+        agents_solid_y[1][0] = (agents_solid_y[1][0] +1)
+    else: 
+        agents_solid_y[1][0] = (agents_solid_y[1][0] -1)
+        
+        
+
+    if agents_solid_y[0][0] < 0:
+        agents_solid_y[0][0] = 0
+        print('bounce!')
+    if agents_solid_y[1][0] < 0:
+        agents_solid_y[1][0] = 1
+        print('bounce!')
+    if agents_solid_y [0][0] > 99:
+        agents_solid_y[0][0] = 99
+        print('bounce!')
+    if agents_solid_y [1][0] > 99:
+        agents_solid_y[1][0] = 99
+        print('bounce!')
     
-# testing solid wall solution
-agents_solid = (99, 0)
+    
+    print(agents_solid_y)
+    
+'''
+        
+'''
+SOLID WALL SOLUTION        
+        
     
 # for-loop to change x- and y- variable by timestep (Solid wall/wall bounce solution)
 for x in range(timestep):
@@ -100,7 +137,7 @@ for x in range(timestep):
         
     print(agents)
     
-
+'''
 
 
 
