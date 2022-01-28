@@ -67,6 +67,45 @@ for x in range(timestep):
             
     print(agents)
     
+    
+    
+    
+    
+# testing solid wall solution
+agents_solid = (99, 0)
+    
+# for-loop to change x- and y- variable by timestep (Solid wall/wall bounce solution)
+for x in range(timestep):
+
+    for i in range(num_of_agents):
+        if random.random() < 0.5:
+            agents[i][1] = (agents[i][1] + 1 )
+        else:
+            agents[i][1] = (agents[i][1] - 1 )
+            
+    for i in range (num_of_agents):
+        if random.random() < 0.5:
+            agents[i][0] = (agents[i][0] + 1 )
+        else:
+            agents[i][0] = (agents[i][0] - 1 )
+            
+    if agents[i][0] < 0:
+        agents[i][0] = 0
+    if agents[i][1] < 0:
+        agents[i][1] = 1
+    if agents [i][0] > 99:
+        agents[i][0] = 99
+    if agents [i][1] > 99:
+        agents[i][1] = 99
+        
+    print(agents)
+    
+
+
+
+
+
+    
 ''' would be nice if i could get this to output a separate plot for each movement of agent '''
 
 
