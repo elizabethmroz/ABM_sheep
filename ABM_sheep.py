@@ -9,8 +9,10 @@ Created on Tue Jan 25 12:39:06 2022
 QUESTION FOR DEMONSTRATOR:
     
 # DOES THE MODULUS OPERATOR HAVE TO BE +1 MORE THAN THE BOUNDARY ALWAYS?
+# MATHEMATICALLY THAT MAKES SENSE 
 
 # because here, the 100 becomes 0
+
 test_agent = (100, 50)
 test_agent_update = ((test_agent[0] + 1) % 101)
 print(test_agent)
@@ -18,6 +20,7 @@ print(test_agent_update)
 
 
 # whereas here, the 100 becomes 1 because 100/100 is 1
+
 test_agent = (100, 50)
 test_agent_update = ((test_agent[0] + 1) % 100)
 print(test_agent)
