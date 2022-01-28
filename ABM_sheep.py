@@ -26,24 +26,27 @@ print(agents)
     
 
 # timesteps
-timestep = 5
+timestep = 100
 
-# for-loop to change y-variable by timestep
+# for-loop to change y-variable by timestep (Torus boundary solution)
 for x in range(timestep):
     for i in range(num_of_agents):
         if random.random() < 0.5:
-            agents[i][0] = agents[i][0] + 1
+            agents[i][0] = (agents[i][0] + 1) % 100
         else: 
-            agents[i][0] = agents[i][0] - 1
+            agents[i][0] = (agents[i][0] - 1) % 100
 
-# for-loop to change x-variable by timestep
+# for-loop to change x-variable by timestep (Torus boundary solution)
 for x in range(timestep):
     for i in range(num_of_agents):
         if random.random() < 0.5:
-            agents[i][1] = agents[i][1] + 1
+            agents[i][1] = (agents[i][1] + 1) % 100
         else: 
-            agents[i][1] = agents[i][1] - 1
+            agents[i][1] = (agents[i][1] - 1) % 100
             
+# check
+print(agents)
+
 
 '''
 bounding the environment: 
@@ -68,8 +71,8 @@ print("The coordinates of the agent located furthest north are", max(agents, key
 
 ''' 
 
-plt.ylim(-29,129)
-plt.xlim(-29,129)
+plt.ylim(0,99)
+plt.xlim(0,99)
 
 for i in range(num_of_agents):
     plt.scatter(agents[i][0],agents[i][1], color='black')
