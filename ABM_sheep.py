@@ -1,30 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 25 12:39:06 2022
-
-@author: gy16e3m
-"""
-
 '''
-QUESTION FOR DEMONSTRATOR:
+NAME
+    Agent-based model: sheep in a field
     
-# DOES THE MODULUS OPERATOR HAVE TO BE +1 MORE THAN THE BOUNDARY ALWAYS?
-# MATHEMATICALLY THAT MAKES SENSE 
+PURPOSE
+    To learn the following: variables, containers, branching and loops, functions,
+    classes, I/O, modules, functional/exceptions, GUIS/web
+    And to demonstrate the above by creating an agent-based model
 
-# because here, the 100 becomes 0
-
-test_agent = (100, 50)
-test_agent_update = ((test_agent[0] + 1) % 101)
-print(test_agent)
-print(test_agent_update)
-
-
-# whereas here, the 100 becomes 1 because 100/100 is 1
-
-test_agent = (100, 50)
-test_agent_update = ((test_agent[0] + 1) % 100)
-print(test_agent)
-print(test_agent_update)
+PROGRAMMER
+    Elizabeth Mroz
+    
 
 '''
 
@@ -70,8 +55,7 @@ for x in range(timestep):
             
     print(agents)
     
-    
-    
+      
     
 '''
 # TESTING SOLID WALL SOLUTION
