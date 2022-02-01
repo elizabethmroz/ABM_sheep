@@ -92,63 +92,27 @@ m_north = max(agents, key=operator.itemgetter(1))
 plt.scatter(m_north[0],m_north[1], color='red')
 plt.show()
 
+
+
+
+
+
 distances_range = []
 
-# time challenging
-# 10 agents
-
-
-
-# original --- distance_range len = 100
-# time = 0.0015266000000337954
-# time = 0.0023352000002887507
-start = time.clock()
-for x in range(num_of_agents):
-    for y in range(num_of_agents):
-        
-        distances_range.append(dist_between(agents[x],agents[y]))
-end = time.clock()
-print('time = ' + str(end-start))
-    
-# test 1 --- distance_range len = 90
-# takes out 1 x 1, 2 x 2 etc. 
-#time = 0.0019557000000531843
-# time = 0.0026222999999845342
-start = time.clock()
-for x in range(num_of_agents):
-    for y in range(num_of_agents):
-        
-        if (x != y):
-        
-            distances_range.append(dist_between(agents[x],agents[y]))
-end = time.clock()
-print('time = ' + str(end-start))
-
-# test 2 --- distances_range len = 45
-# time = 0.006494100000054459
-# time = 0.005173000000013417
 start = time.clock()
 for x in range(num_of_agents):
     for y in range(num_of_agents):
         
         if (x < y):
-            print(x,y)
+            
             distances_range.append(dist_between(agents[x],agents[y]))
 end = time.clock()
 print('time = ' + str(end-start))
 
 
-# showing that whilst TEST 2 is theoretically more optimum, 
-# it takes longer 
-print(max([0.0015266000000337954, 0.0019557000000531843, 0.006494100000054459]))
 
 
 
-print(distances_range)
-print(len(distances_range))
-
-print(max(distances_range))
-print(min(distances_range))
 
 
 
