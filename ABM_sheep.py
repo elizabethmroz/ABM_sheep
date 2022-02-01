@@ -20,8 +20,9 @@ import operator
 import matplotlib.pyplot as plt
 
 # function
-def dist_between (agents_row_a, agents_row_b):
-    return (math.pow((agents_row_a[0] - agents_row_b[0]),2)) + (math.pow(agents_row_a[1] - agents_row_b[1],2))**0.5
+def dist_between(agents_row_a, agents_row_b):
+    return (((agents_row_a[0] - agents_row_b[0])**2) + ((agents_row_a[1] - agents_row_b[1])**2))**0.5
+
 
    
     
@@ -96,7 +97,10 @@ distance = dist_between(agents[0], agents[1])
 print(distance)
 
 
-
+for x in range(num_of_agents):
+    for y in range(num_of_agents):
+        print(dist_between(agents[x],agents[y]))
+    
 
 
 
