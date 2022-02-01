@@ -19,6 +19,29 @@ import math
 import operator 
 import matplotlib.pyplot as plt
 
+# function
+def dist_between (agents_row_a, agents_row_b):
+    return (math.pow((agents_row_a[0] - agents_row_b[0]),2)) + (math.pow(agents_row_a[1] - agents_row_b[1],2))**0.5
+
+   
+    
+    
+'''
+# distance between agents 0 and 1
+# pythag = a^2+b^2 = c^2
+euclid = ((math.pow((agents[0][1] - agents[1][1]),2)) + (math.pow((agents[0][0]-agents[1][0]),2)))**0.5            
+print("agents 0 and 1 are", euclid, "units (euclidean distance) away from each other")
+
+# which agent is furthest east?
+print("The coordinates of the agent located furthest east are", max(agents))
+print("The coordinates of the agent located furthest north are", max(agents, key=operator.itemgetter(1)))
+'''
+
+
+
+
+
+
 # number of agents
 num_of_agents = 10
 
@@ -67,6 +90,25 @@ plt.scatter(m_east[0],m_east[1], color='blue')
 m_north = max(agents, key=operator.itemgetter(1))
 plt.scatter(m_north[0],m_north[1], color='red')
 plt.show()
+
+
+distance = dist_between(agents[0], agents[1])
+print(distance)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
       
@@ -148,20 +190,7 @@ for x in range(timestep):
 
 
 
-''' COMMENTED OUT FOR NOW 
 
-
-# distance between agents 0 and 1
-# pythag = a^2+b^2 = c^2
-euclid = ((math.pow((agents[0][1] - agents[1][1]),2)) + (math.pow((agents[0][0]-agents[1][0]),2)))**0.5            
-print("agents 0 and 1 are", euclid, "units (euclidean distance) away from each other")
-
-# which agent is furthest east?
-print("The coordinates of the agent located furthest east are", max(agents))
-print("The coordinates of the agent located furthest north are", max(agents, key=operator.itemgetter(1)))
-
-
-''' 
 
 
 
