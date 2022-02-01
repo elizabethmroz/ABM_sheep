@@ -18,6 +18,7 @@ import random
 import math
 import operator 
 import matplotlib.pyplot as plt
+import time
 
 # function
 def dist_between(agents_row_a, agents_row_b):
@@ -50,8 +51,7 @@ num_of_agents = 10
 agents = []
 
 # timesteps
-timestep = 10
-
+timestep = 100
 
 # for-loop creating agents
 for i in range(num_of_agents):
@@ -92,20 +92,22 @@ m_north = max(agents, key=operator.itemgetter(1))
 plt.scatter(m_north[0],m_north[1], color='red')
 plt.show()
 
+distances_range = []
 
-distance = dist_between(agents[0], agents[1])
-print(distance)
-
+start = time.clock()
 
 for x in range(num_of_agents):
     for y in range(num_of_agents):
-        print(dist_between(agents[x],agents[y]))
+        distances_range.append(dist_between(agents[x],agents[y]))
     
+end = time.clock()
+print('time = ' + str(end-start))
 
 
+print(distances_range)
 
-
-
+print(max(distances_range))
+print(min(distances_range))
 
 
 
