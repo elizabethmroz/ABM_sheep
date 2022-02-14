@@ -3,15 +3,14 @@ import random
 # created instance of agent class
 class Agent:
     # instance of a class
-    # self becomes the argument that is passed in 
-    def __init__(environment):
-        self.environment = environment
-        self.store = 0
-        
+    # self becomes the argument that is passed in         
     def __init__(self):
         self.x = random.randint(0,99)
         self.y = random.randint(0,99)
         
+        def __init__(environment):
+            self.environment = environment
+            self.store = 0
     
         
         # if asked to print, this is what should be done
@@ -28,3 +27,12 @@ class Agent:
             self.y = (self.y + 1) % 100
         else:
             self.y = (self.y - 1) % 100
+            
+            
+
+    
+    def eat(self):
+        if self.environment[self.y][self.x] >10:
+            self.environment[self.y][self.x] -=10
+            self.store += 10
+                                     

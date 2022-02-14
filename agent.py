@@ -16,12 +16,24 @@ for line in f:
 print(data)
 f.close()
 
+# making the environment list
+environment = []
+rowlist = []
+
+environment.append(rowlist)
+rowlist.append(data)
+
+matplotlib.pyplot.imshow(environment)
+matplotlib.pyplot.show()
+
 
 
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a.x - agents_row_b.x)**2) +
     ((agents_row_a.y - agents_row_b.y)**2))**0.5
 
+
+# making the agents list
 num_of_agents = 10
 num_of_iterations = 100
 agents = []
@@ -39,7 +51,7 @@ agents = []
 # Make the agents.
 for i in range(num_of_agents):
     #agents.append([random.randint(0,99),random.randint(0,99)])
-    agents.append(agentframework.Agent())
+    agents.append(agentframework.Agent(environment))
     
 
 
@@ -48,6 +60,13 @@ for i in range(num_of_agents):
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
         agents[i].move()
+        
+# Agents eat
+for j in range(num_of_iterations):
+    for i in range(num_of_agents):
+        agents[i].move()
+        agents[i].eat()        
+        
         
 matplotlib.pyplot.xlim(0, 99)
 matplotlib.pyplot.ylim(0, 99)
