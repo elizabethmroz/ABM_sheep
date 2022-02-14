@@ -1,4 +1,33 @@
 import random
+import matplotlib.pyplot
+
+
+
+# reading data
+f = open("in.txt")
+data = []
+for line in f:
+    parsed_line = str.split(line,",")
+    data_line = []
+    for word in parsed_line:
+        data_line.append(float(word))
+    data.append(data_line)
+print(data)
+f.close()
+
+# making the environment list
+environment = []
+rowlist = []
+
+for row in range(len(data)):
+    for values in range(len(data)):
+        data[values][row]
+rowlist.append(data[values][row])
+
+environment.append(rowlist)
+
+matplotlib.pyplot.imshow(environment)
+matplotlib.pyplot.show()
 
 # created instance of agent class
 class Agent:
@@ -8,9 +37,9 @@ class Agent:
         self.x = random.randint(0,99)
         self.y = random.randint(0,99)
         
-        def __init__(environment):
-            self.environment = environment
-            self.store = 0
+    def __init__(environment):
+        self.environment = environment
+        self.store = 0
     
         
         # if asked to print, this is what should be done

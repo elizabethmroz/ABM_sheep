@@ -4,31 +4,7 @@ import matplotlib.pyplot
 import agentframework
 import csv
 
-# reading data
-f = open("in.txt")
-data = []
-for line in f:
-    parsed_line = str.split(line,",")
-    data_line = []
-    for word in parsed_line:
-        data_line.append(float(word))
-    data.append(data_line)
-print(data)
-f.close()
 
-# making the environment list
-environment = []
-rowlist = []
-
-for row in range(len(data)):
-    for values in range(len(data)):
-        data[values][row]
-rowlist.append(data[values][row])
-
-environment.append(rowlist)
-
-matplotlib.pyplot.imshow(environment)
-matplotlib.pyplot.show()
 
 
 
@@ -46,7 +22,6 @@ agents = []
 
 
 
-
 # attach agent to label so it can be printed
 # . means create a new instance of this thing called a
 #a = agentframework.Agent(1)
@@ -56,17 +31,18 @@ agents = []
 
 # Make the agents.
 for i in range(num_of_agents):
-    #agents.append([random.randint(0,99),random.randint(0,99)])
-    agents.append(agentframework.Agent(environment))
+    agents.append([random.randint(0,99),random.randint(0,99)])
+    agents.append(agentframework.Agent(agentframework.environment))
     
+print(agents)
 
 
-
+'''
 # Move the agents.
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
         agents[i].move()
-        
+'''
 # Agents eat
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
