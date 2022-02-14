@@ -19,12 +19,11 @@ f.close()
 # making the environment list
 environment = []
 rowlist = []
-for i in range(len(data)):
-    for j in range(len(data[i])):
-        data[i][j]
-        
-        
-rowlist.append(data[i][j])
+
+for row in range(len(data)):
+    for values in range(len(data)):
+        data[values][row]
+rowlist.append(data[values][row])
 
 environment.append(rowlist)
 
@@ -33,7 +32,7 @@ matplotlib.pyplot.show()
 
 
 
-
+# function for euclidean distance between agents calculation 
 
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a.x - agents_row_b.x)**2) +
