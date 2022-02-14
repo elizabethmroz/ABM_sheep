@@ -19,12 +19,19 @@ f.close()
 # making the environment list
 environment = []
 rowlist = []
+for i in range(len(data)):
+    for j in range(len(data[i])):
+        data[i][j]
+        
+        
+rowlist.append(data[i][j])
 
 environment.append(rowlist)
-rowlist.append(data)
 
 matplotlib.pyplot.imshow(environment)
 matplotlib.pyplot.show()
+
+
 
 
 
