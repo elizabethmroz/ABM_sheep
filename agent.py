@@ -2,13 +2,20 @@ import random
 import operator
 import matplotlib.pyplot
 import agentframework
+import csv
 
+# reading data
+f = open("in.txt")
+data = []
+for line in f:
+    parsed_line = str.split(line,",")
+    data_line = []
+    for word in parsed_line:
+        data_line.append(float(word))
+    data.append(data_line)
+print(data)
+f.close()
 
-# testing the connection works
-a = agentframework.Agent()
-print(a.y, a.x)
-a.move()
-print(a.y, a.x)
 
 
 def distance_between(agents_row_a, agents_row_b):
