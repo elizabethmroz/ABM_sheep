@@ -4,9 +4,15 @@ import random
 class Agent:
     # instance of a class
     # self becomes the argument that is passed in 
+    def __init__(environment):
+        self.environment = environment
+        self.store = 0
+        
     def __init__(self):
         self.x = random.randint(0,99)
         self.y = random.randint(0,99)
+        
+    
         
         # if asked to print, this is what should be done
     def __str__(self):
