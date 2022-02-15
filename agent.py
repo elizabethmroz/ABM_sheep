@@ -35,8 +35,19 @@ for line in f:
 print(data)
 f.close()
 
+# setting up environment
+environment = []
+rowlist = []
 
+for row in range(len(data)):
+    for values in range(len(data)):
+        data[values][row]
 
+rowlist.append(data[values][row])
+environment.append(rowlist)
+
+matplotlib.pyplot.imshow(environment)
+matplotlib.pyplot.show() 
 
 # attach agent to label so it can be printed
 # . means create a new instance of this thing called a
