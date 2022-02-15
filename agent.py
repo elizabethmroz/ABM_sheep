@@ -2,6 +2,7 @@ import random
 import operator
 import matplotlib.pyplot
 import agentframework
+import csv
 
 
 # testing the connection works
@@ -11,6 +12,8 @@ a.move()
 print(a.y, a.x)
 
 
+
+# function for euclidean distance
 def distance_between(agents_row_a, agents_row_b):
     return (((agents_row_a.x - agents_row_b.x)**2) +
     ((agents_row_a.y - agents_row_b.y)**2))**0.5
@@ -18,6 +21,19 @@ def distance_between(agents_row_a, agents_row_b):
 num_of_agents = 10
 num_of_iterations = 100
 agents = []
+
+# import data
+# reading data
+f = open("in.txt")
+data = []
+for line in f:
+    parsed_line = str.split(line, ",")
+    data_line = []
+    for word in parsed_line:
+        data_line.append(float(word))
+    data.append(data_line)
+print(data)
+f.close()
 
 
 
