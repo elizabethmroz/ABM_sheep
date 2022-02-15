@@ -5,12 +5,6 @@ import agentframework
 import csv
 
 
-# testing the connection works
-a = agentframework.Agent()
-print(a.y, a.x)
-a.move()
-print(a.y, a.x)
-
 
 
 # function for euclidean distance
@@ -59,12 +53,13 @@ num_of_agents = 10
 num_of_iterations = 100
 agents = []
 
+
+
 # Make the agents.
 for i in range(num_of_agents):
     agents.append([random.randint(0,99),random.randint(0,99)])
     agents.append(agentframework.Agent(environment))
     
-
 
 
 # Move the agents.
