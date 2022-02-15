@@ -7,8 +7,9 @@ class Agent:
     def __init__(self, environment):
         self.x = random.randint(0,99)
         self.y = random.randint(0,99)
-        self.environment = environment
-        self.store = 0 
+        def __init__(environment):
+            self.environment = environment
+            self.store = 0 # We'll come to this in a second. 
         
         
         # if asked to print, this is what should be done
