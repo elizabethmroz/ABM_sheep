@@ -28,17 +28,17 @@ print(data)
 f.close()
 
 # setting up environment
-environment = []
-rowlist = []
+#environment = []#
+#rowlist = []
 
 for row in range(len(data)):
     for values in range(len(data)):
         data[values][row]
 
-rowlist.append(data[values][row])
-environment.append(rowlist)
+#rowlist.append(data[values][row])
+#environment.append(rowlist)
 
-matplotlib.pyplot.imshow(environment)
+matplotlib.pyplot.imshow(data)
 matplotlib.pyplot.show() 
 
 # attach agent to label so it can be printed
@@ -57,9 +57,9 @@ agents = []
 
 # Make the agents.
 for i in range(num_of_agents):
-    agents.append([random.randint(0,99),random.randint(0,99)])
-    agents.append(agentframework.Agent(environment))
-    
+    agents.append(agentframework.Agent(data))
+
+
 
 
 # Move the agents.
@@ -69,6 +69,7 @@ for j in range(num_of_iterations):
         
 matplotlib.pyplot.xlim(0, 99)
 matplotlib.pyplot.ylim(0, 99)
+matplotlib.pyplot.imshow(data)
 for i in range(num_of_agents):
     matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
 matplotlib.pyplot.show()
