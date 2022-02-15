@@ -58,7 +58,7 @@ agents = []
 # Make the agents.
 for i in range(num_of_agents):
     agents.append([random.randint(0,99),random.randint(0,99)])
-    agents.append(agentframework.Agent(environment))
+
     
 
 
