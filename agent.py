@@ -62,10 +62,11 @@ for i in range(num_of_agents):
 
 
 
-# Move the agents.
+# Move the agents and they eat the environment
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
         agents[i].move()
+        agents[i].eat()
         
 matplotlib.pyplot.xlim(0, 99)
 matplotlib.pyplot.ylim(0, 99)

@@ -22,6 +22,11 @@ class Agent:
         else:
             self.y = (self.y - 1) % 100
             
+    def eat(self):
+        if self.environment[self.y][self.x] > 10:
+            self.environment[self.y][self.x] -=10
+            self.store += 10
+            
         
         # if asked to print, this is what should be done
     def __str__(self):
