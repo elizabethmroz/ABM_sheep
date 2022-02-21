@@ -70,6 +70,7 @@ for i in range(num_of_agents):
 # Move the agents and they eat the environment
 for j in range(num_of_iterations):
     for i in range(num_of_agents):
+        random.shuffle(agents)
         agents[i].move()
         agents[i].eat()
         agents[i].share(neighbourhood)
