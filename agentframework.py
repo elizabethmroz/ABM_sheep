@@ -25,10 +25,4 @@ class Agent:
         
         # if asked to print, this is what should be done
     def __str__(self):
-<<<<<<< HEAD
         return "id =" + str(self.id) + "x=" + str(self.x) + "y=" + str(self.y) 
-=======
-        return "id =" + str(self.id) + "x=" + str(self.x) + "y=" + str(self.y) 
-    
-    
->>>>>>> 44522ffcfc30549e8aaebde708bcbfb0f73fa134
