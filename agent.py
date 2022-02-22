@@ -5,17 +5,6 @@ import matplotlib.animation
 import agentframework
 
 
-
-
-
-
-
-
-
-# share with neighbours
-# agent will search for close neighbours and share resources with them
-
-
 # import data
 # reading data
 f = open("in.txt")
@@ -29,30 +18,16 @@ for line in f:
 #print(data)
 f.close()
 
-# setting up environment
-#environment = []
-#rowlist = []
+
 
 for row in range(len(data)):
     for values in range(len(data)):
         data[values][row]
 
-#rowlist.append(data[values][row])
-#environment.append(rowlist)
-
-#matplotlib.pyplot.imshow(data)
-#matplotlib.pyplot.show() 
-
-# attach agent to label so it can be printed
-# . means create a new instance of this thing called a
-#a = agentframework.Agent(1)
-#b = agentframework.Agent(2)
-#print(a)
-#print(b)
 
 # agents list
-num_of_agents = 5
-num_of_iterations = 10
+num_of_agents = 10
+num_of_iterations = 100
 neighbourhood = 20
 agents = []
 
@@ -77,8 +52,6 @@ carry_on = True
 
 # Move the agents and they eat the environment
 
-
-
 def update(frame_number):
     
     fig.clear()
@@ -92,37 +65,39 @@ def update(frame_number):
             #become different colours / take over from another agent
             agents[i].move()
             print("MOVEWMENT agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
-            #agents[i].eat()
-            #agents[i].share(neighbourhood)
+            agents[i].eat()
+            agents[i].share(neighbourhood)
             
         print("\n")
             
             
             
         
-    if agents[i].store >= 100:
+    if agents[i].store >= 1000:
         carry_on = False
-        #print("stopping condition")
+    print("stopping condition")
                      
 
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
         matplotlib.pyplot.xlim(0, 99)
         matplotlib.pyplot.ylim(0, 99)
-        #matplotlib.pyplot.imshow(data)
+        matplotlib.pyplot.imshow(data)
         #print("agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
         #print(agents[i].store)
         
+        
 def gen_function(b = [0]):
-    a=0
-    global carry_on 
+    a = 0
+    global carry_on
     while (a < 10) & (carry_on):
         yield a
         a = a + 1
+        
    
 
-animation = matplotlib.animation.FuncAnimation(fig, update, interval=100, repeat=False, frames = num_of_iterations)  
-#animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
+#animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=True, frames = num_of_iterations)  
+animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
 matplotlib.pyplot.show()
 
 '''
