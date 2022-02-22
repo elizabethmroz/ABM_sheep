@@ -60,7 +60,7 @@ agents = []
 # animation figure
 fig = matplotlib.pyplot.figure(figsize=(7,7))
 ax = fig.add_axes([0,0,1,1])
-ax.set_autoscale_on(True)
+#ax.set_autoscale_on(True)
 
 
 
@@ -77,12 +77,14 @@ carry_on = True
 # Move the agents and they eat the environment
 
 def update(frame_number):
+    
     fig.clear()
     global carry_on
 
     for j in range(num_of_iterations):
+        
         for i in range(num_of_agents):
-            random.shuffle(agents)
+            #random.shuffle(agents)
             agents[i].move()
             agents[i].eat()
             agents[i].share(neighbourhood)
