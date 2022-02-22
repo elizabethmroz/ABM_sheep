@@ -26,9 +26,9 @@ for row in range(len(data)):
 
 
 # agents list
-num_of_agents = 10
+num_of_agents = 20
 num_of_iterations = 100
-neighbourhood = 20
+neighbourhood = 100
 agents = []
 
 
@@ -73,9 +73,12 @@ def update(frame_number):
             
             
         
-    if agents[i].store >= 1000:
+    if agents[i].store >= 2501:
         carry_on = False
+        
     print("stopping condition")
+    for i in range(num_of_agents):
+        print(agents[i].store)
                      
 
     for i in range(num_of_agents):
