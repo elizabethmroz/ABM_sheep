@@ -101,9 +101,9 @@ def update(frame_number):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
         matplotlib.pyplot.xlim(0, 99)
         matplotlib.pyplot.ylim(0, 99)
-        matplotlib.pyplot.imshow(data)
+        #matplotlib.pyplot.imshow(data)
         print(agents[i].x, agents[i].y)
-        print(agents[i].store)
+        #print(agents[i].store)
         
 def gen_function(b = [0]):
     a=0
@@ -113,9 +113,8 @@ def gen_function(b = [0]):
         a = a + 1
    
 
-#animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)  
-
-animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
+animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)  
+# animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
 matplotlib.pyplot.show()
 
 '''
