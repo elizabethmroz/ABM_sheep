@@ -85,7 +85,7 @@ def update(frame_number):
     for j in range(num_of_iterations):
         
         for i in range(num_of_agents):
-            #random.shuffle(agents)
+            random.shuffle(agents)
             agents[i].move()
             print("MOVEWMENT agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
             agents[i].eat()
@@ -98,7 +98,7 @@ def update(frame_number):
         
     if agents[i].store >= 100:
         carry_on = False
-        print("stopping condition")
+        #print("stopping condition")
                      
 
     for i in range(num_of_agents):
@@ -106,7 +106,7 @@ def update(frame_number):
         matplotlib.pyplot.xlim(0, 99)
         matplotlib.pyplot.ylim(0, 99)
         #matplotlib.pyplot.imshow(data)
-        print("agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
+        #print("agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
         #print(agents[i].store)
         
 def gen_function(b = [0]):

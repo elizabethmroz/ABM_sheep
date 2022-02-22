@@ -12,7 +12,7 @@ class Agent:
         self.environment = environment
         self.store = 0 
         self.agent = agent
-        self.name = self.x + self.y # VERY SIMPLISTIC NAME ASSIGNMENT, FLAWED
+        self.name = str(self.x) + "a" # VERY SIMPLISTIC NAME ASSIGNMENT, FLAWED
         
     def move(self):
         if random.random() < 0.5:
