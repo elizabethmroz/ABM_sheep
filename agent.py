@@ -40,8 +40,8 @@ for row in range(len(data)):
 #rowlist.append(data[values][row])
 #environment.append(rowlist)
 
-matplotlib.pyplot.imshow(data)
-matplotlib.pyplot.show() 
+#matplotlib.pyplot.imshow(data)
+#matplotlib.pyplot.show() 
 
 # attach agent to label so it can be printed
 # . means create a new instance of this thing called a
@@ -79,9 +79,6 @@ carry_on = True
 
 
 
-for j in range(num_of_iterations):
-    print("VALUE")
-'''
 def update(frame_number):
     
     fig.clear()
@@ -124,9 +121,9 @@ def gen_function(b = [0]):
         a = a + 1
    
 
-animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)  
+animation = matplotlib.animation.FuncAnimation(fig, update, interval=100, repeat=False, frames = num_of_iterations)  
 #animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
-matplotlib.pyplot.show()'''
+matplotlib.pyplot.show()
 
 '''
 
