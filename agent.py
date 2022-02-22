@@ -51,8 +51,8 @@ matplotlib.pyplot.show()
 #print(b)
 
 # agents list
-num_of_agents = 2
-num_of_iterations = 5
+num_of_agents = 5
+num_of_iterations = 10
 neighbourhood = 20
 agents = []
 
@@ -77,6 +77,11 @@ carry_on = True
 
 # Move the agents and they eat the environment
 
+
+
+for j in range(num_of_iterations):
+    print("VALUE")
+'''
 def update(frame_number):
     
     fig.clear()
@@ -84,15 +89,14 @@ def update(frame_number):
 
     for j in range(num_of_iterations):
         #random.shuffle(agents)
-        print("MOVEMENT")
         for i in range(num_of_agents):
             print("UNIQUE MOVEMENT")
             #random.shuffle(agents) # not shuffling which moves first, just shuffling the agents in the actual list around so they
             #become different colours / take over from another agent
             agents[i].move()
             print("MOVEWMENT agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
-            agents[i].eat()
-            agents[i].share(neighbourhood)
+            #agents[i].eat()
+            #agents[i].share(neighbourhood)
             
         print("\n")
             
@@ -122,7 +126,7 @@ def gen_function(b = [0]):
 
 animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)  
 #animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
-matplotlib.pyplot.show()
+matplotlib.pyplot.show()'''
 
 '''
 
