@@ -68,8 +68,8 @@ ax.set_autoscale_on(True)
 # Make the agents.
 for i in range(num_of_agents):
     agents.append(agentframework.Agent(data, agents))
-    
-
+    # CHECKING THAT THE AGENTS STORE IS 0 AT THE START
+    #print(agents[i].store)
 
 carry_on = True    
 
@@ -88,11 +88,11 @@ def update(frame_number):
             agents[i].eat()
             agents[i].share(neighbourhood)
             
-    for j in range(num_of_agents):           
-        if agents[i].store == 100:
-            carry_on = False
-            print("stopping condition")
-            
+         
+    if agents[i].store == 100:
+        carry_on = False
+        print("stopping condition")
+                    
 
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
@@ -100,6 +100,7 @@ def update(frame_number):
         matplotlib.pyplot.ylim(0, 99)
         matplotlib.pyplot.imshow(data)
         print(agents[i].x, agents[i].y)
+        print(agents[i].store)
         
 def gen_function(b = [0]):
     a=0
