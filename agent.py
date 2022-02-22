@@ -3,7 +3,6 @@ import operator
 import matplotlib.pyplot
 import matplotlib.animation
 import agentframework
-import csv
 
 
 
