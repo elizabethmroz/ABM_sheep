@@ -71,7 +71,7 @@ for i in range(num_of_agents):
     
 
 
-    
+carry_on = True    
 
 
 
@@ -79,6 +79,7 @@ for i in range(num_of_agents):
 
 def update(frame_number):
     fig.clear()
+    global carry_on
 
     for j in range(num_of_iterations):
         for i in range(num_of_agents):
@@ -86,7 +87,12 @@ def update(frame_number):
             agents[i].move()
             agents[i].eat()
             agents[i].share(neighbourhood)
-        
+            
+    for j in range(num_of_agents):           
+        if agents[i].store == 100:
+            carry_on = False
+            print("stopping condition")
+            
 
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
@@ -94,9 +100,18 @@ def update(frame_number):
         matplotlib.pyplot.ylim(0, 99)
         matplotlib.pyplot.imshow(data)
         print(agents[i].x, agents[i].y)
+        
+def gen_function(b = [0]):
+    a=0
+    global carry_on 
+    while (a<10) & (carry_on):
+        yield a
+        a = a + 1
    
 
-animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)    
+#animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)  
+
+animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
 matplotlib.pyplot.show()
 
 '''
