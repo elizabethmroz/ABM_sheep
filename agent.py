@@ -88,7 +88,9 @@ def update(frame_number):
             agents[i].eat()
             agents[i].share(neighbourhood)
             
-         
+    if random.random() < 0.1:
+        carry_on = False
+        print("stopping condition")
    # if agents[i].store == 100:
      #   carry_on = False
      #   print("stopping condition")
