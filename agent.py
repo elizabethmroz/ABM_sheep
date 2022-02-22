@@ -61,7 +61,7 @@ agents = []
 # animation figure
 fig = matplotlib.pyplot.figure(figsize=(7,7))
 ax = fig.add_axes([0,0,1,1])
-# ax.set_autoscale_on(False)
+ax.set_autoscale_on(True)
 
 
 
@@ -90,6 +90,9 @@ def update(frame_number):
 
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
+        matplotlib.pyplot.xlim(0, 99)
+        matplotlib.pyplot.ylim(0, 99)
+        matplotlib.pyplot.imshow(data)
         print(agents[i].x, agents[i].y)
    
 
@@ -97,8 +100,7 @@ animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=F
 matplotlib.pyplot.show()
 
 '''
-matplotlib.pyplot.xlim(0, 99)
-matplotlib.pyplot.ylim(0, 99)
+
 matplotlib.pyplot.imshow(data)
 '''
 
