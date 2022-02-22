@@ -51,7 +51,7 @@ matplotlib.pyplot.show()
 #print(b)
 
 # agents list
-num_of_agents = 10
+num_of_agents = 2
 num_of_iterations = 5
 neighbourhood = 20
 agents = []
@@ -83,9 +83,12 @@ def update(frame_number):
     global carry_on
 
     for j in range(num_of_iterations):
-        
+        #random.shuffle(agents)
+        print("MOVEMENT")
         for i in range(num_of_agents):
-            random.shuffle(agents)
+            print("UNIQUE MOVEMENT")
+            #random.shuffle(agents) # not shuffling which moves first, just shuffling the agents in the actual list around so they
+            #become different colours / take over from another agent
             agents[i].move()
             print("MOVEWMENT agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
             agents[i].eat()
