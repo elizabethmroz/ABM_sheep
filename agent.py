@@ -89,9 +89,9 @@ def update(frame_number):
             agents[i].share(neighbourhood)
             
          
-    if agents[i].store == 100:
-        carry_on = False
-        print("stopping condition")
+   # if agents[i].store == 100:
+     #   carry_on = False
+     #   print("stopping condition")
                     
 
     for i in range(num_of_agents):
