@@ -1,6 +1,7 @@
 import random
 import operator
 import matplotlib.pyplot
+import matplotlib.animation
 import agentframework
 import csv
 
@@ -30,7 +31,7 @@ print(data)
 f.close()
 
 # setting up environment
-#environment = []#
+#environment = []
 #rowlist = []
 
 for row in range(len(data)):
@@ -57,6 +58,12 @@ neighbourhood = 20
 agents = []
 
 
+# animation figure
+fig = matplotlib.pyplot.figure(figsize=(7,7))
+ax = fig.add_axes([0,0,1,1])
+# ax.set_autoscale_on(False)
+
+
 
 # Make the agents.
 for i in range(num_of_agents):
@@ -64,25 +71,36 @@ for i in range(num_of_agents):
     
 
 
+    
 
 
 
 # Move the agents and they eat the environment
-for j in range(num_of_iterations):
-    for i in range(num_of_agents):
-        random.shuffle(agents)
-        agents[i].move()
-        agents[i].eat()
-        agents[i].share(neighbourhood)
+
+def update(frame_number):
+    fig.clear()
+
+    for j in range(num_of_iterations):
+        for i in range(num_of_agents):
+            random.shuffle(agents)
+            agents[i].move()
+            agents[i].eat()
+            agents[i].share(neighbourhood)
         
+
+    for i in range(num_of_agents):
+        matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
+        print(agents[i].x, agents[i].y)
+   
+
+animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)    
+matplotlib.pyplot.show()
+
+'''
 matplotlib.pyplot.xlim(0, 99)
 matplotlib.pyplot.ylim(0, 99)
 matplotlib.pyplot.imshow(data)
-for i in range(num_of_agents):
-    matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
-matplotlib.pyplot.show()
-
-
+'''
 
 
      #   if random.random() < 0.5:
