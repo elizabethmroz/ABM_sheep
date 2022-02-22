@@ -52,7 +52,7 @@ matplotlib.pyplot.show()
 
 # agents list
 num_of_agents = 10
-num_of_iterations = 100
+num_of_iterations = 5
 neighbourhood = 20
 agents = []
 
@@ -102,7 +102,7 @@ def update(frame_number):
         matplotlib.pyplot.xlim(0, 99)
         matplotlib.pyplot.ylim(0, 99)
         #matplotlib.pyplot.imshow(data)
-        print(agents[i].x, agents[i].y)
+        print("agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
         #print(agents[i].store)
         
 def gen_function(b = [0]):
