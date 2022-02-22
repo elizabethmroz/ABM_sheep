@@ -69,6 +69,7 @@ for i in range(num_of_agents):
     agents.append(agentframework.Agent(data, agents))
     # CHECKING THAT THE AGENTS STORE IS 0 AT THE START
     #print(agents[i].store)
+    print(agents[i].name)
 
 carry_on = True    
 
@@ -89,10 +90,12 @@ def update(frame_number):
             agents[i].eat()
             agents[i].share(neighbourhood)
             
-        if agents[i].store >= 100:
-            carry_on = False
-            print("stopping condition")
-                    
+            
+        
+    if agents[i].store >= 100:
+        carry_on = False
+        print("stopping condition")
+                     
 
     for i in range(num_of_agents):
         matplotlib.pyplot.scatter(agents[i].x, agents[i].y)
@@ -105,13 +108,13 @@ def update(frame_number):
 def gen_function(b = [0]):
     a=0
     global carry_on 
-    while (a<10) & (carry_on):
+    while (a < 10) & (carry_on):
         yield a
         a = a + 1
    
 
 animation = matplotlib.animation.FuncAnimation(fig, update, interval=1, repeat=False, frames = num_of_iterations)  
-# animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
+#animation = matplotlib.animation.FuncAnimation(fig, update, frames=gen_function, repeat=False)  
 matplotlib.pyplot.show()
 
 '''
