@@ -26,7 +26,7 @@ for line in f:
     for word in parsed_line:
         data_line.append(float(word))
     data.append(data_line)
-print(data)
+#print(data)
 f.close()
 
 # setting up environment
@@ -69,7 +69,7 @@ for i in range(num_of_agents):
     agents.append(agentframework.Agent(data, agents))
     # CHECKING THAT THE AGENTS STORE IS 0 AT THE START
     #print(agents[i].store)
-    print(agents[i].name)
+    #print(agents[i].name)
 
 carry_on = True    
 
@@ -87,8 +87,12 @@ def update(frame_number):
         for i in range(num_of_agents):
             #random.shuffle(agents)
             agents[i].move()
+            print("MOVEWMENT agent #", agents[i].name, "is at:", agents[i].x, agents[i].y)
             agents[i].eat()
             agents[i].share(neighbourhood)
+            
+        print("\n")
+            
             
             
         
